@@ -115,3 +115,4 @@ public class Application {
             throw new IllegalArgumentException("숫자 입력 안함!!!!!!!!");
         }
     }}
+
