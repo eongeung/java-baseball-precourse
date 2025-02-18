@@ -1,5 +1,5 @@
 package baseball;
-import camp.nextstep.edu.missionutils.Randoms;
+
 import camp.nextstep.edu.missionutils.Console;
 
 public class Application {
@@ -115,4 +115,5 @@ public class Application {
             throw new IllegalArgumentException("숫자 입력 안함!!!!!!!!");
         }
     }}
+
 
