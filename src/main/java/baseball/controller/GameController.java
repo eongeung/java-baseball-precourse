@@ -15,8 +15,6 @@ public class GameController {
             OutputView.enter();
             String userInput = InputView.getUserInput();
             UserBall userBall = new UserBall(userInput);
-            //InputView.getUserInput();
-            GameService.countStrikeBall(userBall.getBallNumbers(), computerBall.getBallNumbers());
 
             int[] result = GameService.countStrikeBall(userBall.getBallNumbers(), computerBall.getBallNumbers());
             int strike = result[0];
@@ -25,10 +23,16 @@ public class GameController {
             if (strike == 3) {
                 OutputView.allStrike(strike);
                 OutputView.restart();
-                InputView.getRestartInput();
+                boolean restart = GameService.restartGame();
+
+                if (!restart) {
+                    return;
+                } else {
+                    startGame();
+                }
             }
 
-            if (strike > 0) {
+            if (strike > 0 && strike <3) {
                 OutputView.checkStrike(strike);
             }
 
